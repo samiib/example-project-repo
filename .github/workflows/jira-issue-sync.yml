@@ -1,0 +1,19 @@
+name: Sync issues to Jira
+
+on: [issues, issue_comment]
+concurrency: jira_issues
+
+jobs:
+  sync_issues_to_jira:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync GitHub issues to Jira project
+        uses: espressif/sync-jira-actions@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JIRA_PASS: ${{ secrets.JIRA_PASS }}
+          JIRA_URL: ${{ secrets.JIRA_URL }}
+          JIRA_PROJECT: DCNE
+          JIRA_COMPONENT: ansible-aci # TEST
