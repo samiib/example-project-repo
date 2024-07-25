@@ -1,18 +1,26 @@
-name: Sync issues to Jira
+name: Manually trigger sync issue to Jira
 
-on: [issues, issue_comment, pull_request]
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Action to be performed"
+        required: true
+        default: "mirror-issues"
+      issue-numbers:
+        description: "Issue numbers"
+        required: true
 concurrency: jira_issues
 
 jobs:
   sync_issues_to_jira:
+    name: Sync issues to Jira
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Sync GitHub issues to Jira project
-        uses: samiib/sync-jira-actions@v1.1
-        with:
-          sync_label: jira-sync
+        uses: espressif/sync-jira-actions@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JIRA_PASS: ${{ secrets.JIRA_PASS }}
