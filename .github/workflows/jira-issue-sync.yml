@@ -13,6 +13,7 @@ jobs:
         uses: samiib/sync-jira-actions@v1.1
         with:
           sync_label: jira-sync
+          status_field_id: 10740
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JIRA_PASS: ${{ secrets.JIRA_PASS }}
