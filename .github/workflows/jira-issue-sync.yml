@@ -21,3 +21,4 @@ jobs:
           JIRA_URL: ${{ secrets.JIRA_URL }}
           JIRA_PROJECT: DCNE
           JIRA_COMPONENT: ansible-aci # TEST
+          JIRA_ISSUE_TYPE: GitHub Issue
