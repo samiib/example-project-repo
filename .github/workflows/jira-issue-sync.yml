@@ -15,6 +15,7 @@ jobs:
           sync_label: jira-sync
           status_field_id: 10740
           find_jira_retries: 0
+          link_closing_issues: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JIRA_PASS: ${{ secrets.JIRA_PASS }}
