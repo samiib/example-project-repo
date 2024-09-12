@@ -1,6 +1,10 @@
 name: Sync issues to Jira
 
-on: [issues, issue_comment, pull_request]
+on: 
+  pull_request_target:
+    types: [opened, synchronize, reopened, labeled, unlabeled, edited, closed]
+  issues:
+  issue_comment:
 concurrency: jira_issues
 
 jobs:
