@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Sync GitHub issues to Jira project
-        uses: ciscoecosystem/sync-jira-actions@v1
+        uses: ciscoecosystem/sync-jira-actions@approvals
         with:
           sync_label: jira-sync
           status_field_id: 10740
@@ -43,5 +43,5 @@ jobs:
           JIRA_USER: ${{ secrets.JIRA_USER }}
           JIRA_URL: ${{ secrets.JIRA_URL }}
           JIRA_PROJECT: DCNE
-          JIRA_COMPONENT: ansible-aci # TEST
+          JIRA_COMPONENT: example-project-repo # TEST
           JIRA_ISSUE_TYPE: GitHub Issue
