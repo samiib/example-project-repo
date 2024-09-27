@@ -37,6 +37,7 @@ jobs:
           status_field_id: 10740
           find_jira_retries: 0
           link_closing_issues: true
+          minimum_approvals: 1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JIRA_PASS: ${{ secrets.JIRA_PASS }}
