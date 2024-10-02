@@ -22,6 +22,10 @@ name: Sync issues to Jira
       - auto_merge_disabled
   issues:
   issue_comment:
+  workflow_run:
+    workflows: [jira-issue-sync-review]
+    types:
+      - completed
 concurrency: jira_issues
 
 jobs:
