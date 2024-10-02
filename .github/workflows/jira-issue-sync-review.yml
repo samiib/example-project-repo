@@ -1,3 +1,5 @@
+name: jira-issue-sync-review
+
 on:
   pull_request_review:
 
