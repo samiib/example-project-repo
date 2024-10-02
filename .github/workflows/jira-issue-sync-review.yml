@@ -1,0 +1,8 @@
+on:
+  pull_request_review:
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "A PR review was added or modified, triggering jira-issue-sync."
