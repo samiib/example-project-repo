@@ -41,7 +41,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+      - run: echo "$GITHUB_REPOSITORY_OWNER"
+      - run: echo "$A_SECRET"
       - name: Sync GitHub issues to Jira project
         uses: ciscoecosystem/sync-jira-actions@v1
         with:
@@ -55,6 +56,7 @@ jobs:
           JIRA_PASS: ${{ secrets.JIRA_PASS }}
           JIRA_USER: ${{ secrets.JIRA_USER }}
           JIRA_URL: ${{ secrets.JIRA_URL }}
+          A_SECRET: ${{ secrets.A_SECRET }}
           JIRA_PROJECT: DCNE
           JIRA_COMPONENT: example-project-repo # TEST
           JIRA_ISSUE_TYPE: GitHub Issue
