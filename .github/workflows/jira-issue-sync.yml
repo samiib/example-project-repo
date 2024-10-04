@@ -40,7 +40,6 @@ jobs:
   sync_issues_to_jira:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - run: echo "$GITHUB_REPOSITORY_OWNER"
       - run: echo "$A_SECRET"
       - name: Sync GitHub issues to Jira project
