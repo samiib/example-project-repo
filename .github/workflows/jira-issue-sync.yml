@@ -29,6 +29,14 @@ name: Sync issues to Jira
 concurrency: jira_issues
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "$GITHUB_REPOSITORY_OWNER"
+      - run: echo "$A_SECRET"
+    env:
+      A_SECRET: ${{ secrets.A_SECRET }}
+  
   sync_issues_to_jira:
     runs-on: ubuntu-latest
     steps:
