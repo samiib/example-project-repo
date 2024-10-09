@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync GitHub issues to Jira project
-        uses: ciscoecosystem/sync-jira-actions@v1
+        uses: ciscoecosystem/sync-jira-actions@workflow_run_fix
         with:
           sync_label: jira-sync
           status_field_id: 10740
